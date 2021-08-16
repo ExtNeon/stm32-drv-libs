@@ -8,7 +8,7 @@
 #ifndef SRC_LIB_SPEAKER_SPEAKER_H_
 #define SRC_LIB_SPEAKER_SPEAKER_H_
 #include <main.h>
-#include "../arraylist/arraylist.h"
+#include "../../tools/arraylist/arraylist.h"
 
 struct melody_note_t {
 		uint16_t frequency, duration;

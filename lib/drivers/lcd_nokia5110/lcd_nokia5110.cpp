@@ -50,7 +50,7 @@
  * @license GPL3 or higher
  */
 
-#include "lcd.h"
+#include "lcd_nokia5110.h"
 
 Nokia5110_LCD::Nokia5110_LCD(Shift_HC595& shift_reg, uint8_t pin_num_rst,
 		uint8_t pin_num_ce, uint8_t pin_num_dc, uint8_t pin_num_din,
@@ -170,7 +170,7 @@ void Nokia5110_LCD::refreshScr() {
 	 }*/
 }
 
-void Nokia5110_LCD::set_pixel(uint8_t x, uint8_t y, bool pixel) {
+void Nokia5110_LCD::set_pixel(uint8_t x, uint8_t y, uint16_t pixel) {
 	//page_i=y/8;
 	//page_shift = page_i*get_width() + x;
 	//bit_num=page_shift+(7-y)
@@ -185,7 +185,7 @@ void Nokia5110_LCD::set_pixel(uint8_t x, uint8_t y, bool pixel) {
 		if (y >= get_height())
 			y = get_height() - 1;
 
-		if (pixel) {
+		if (pixel > 0) {
 			buffer[x + (y / 8) * get_width()] |= 1 << (y % 8);
 		} else {
 			buffer[x + (y / 8) * get_width()] &= ~(1 << (y % 8));

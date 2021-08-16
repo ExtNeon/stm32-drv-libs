@@ -70,7 +70,7 @@
 
 #include <main.h>
 
-#include "../boolarray/boolarray.h"
+#include "../../tools/boolarray/boolarray.h"
 
 class Shift_HC595 {
 private:

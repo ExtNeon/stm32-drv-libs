@@ -57,7 +57,7 @@
 
 #include <main.h>
 #include "../hc595/hc595.h"
-#include "../UI/ui.h"
+#include "../../UI/ui.h"
 #include <stdlib.h>
 
 #define LCD_COMMAND false
@@ -101,7 +101,7 @@ public:
 			GPIO_TypeDef *GPIO_PORT_DIN, uint16_t GPIO_Pin_DIN,
 			GPIO_TypeDef *GPIO_PORT_CLK, uint16_t GPIO_Pin_CLK);
 	void refreshScr();
-	void set_pixel(uint8_t x, uint8_t y, bool pixel);
+	void set_pixel(uint8_t x, uint8_t y, uint16_t pixel);
 	void handle_action() {refreshScr();};
 	void clear_buf();
 	void clear_screen();

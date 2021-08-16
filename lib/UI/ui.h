@@ -11,12 +11,12 @@
 #include <vector>
 #include <main.h>
 #include <math.h>
-#include "../arraylist/arraylist.h"
-#include "../fontset/fontset.h"
-#include "../fontset/default_fonts.h"
+#include "../tools/arraylist/arraylist.h"
+#include "fontset/fontset.h"
+#include "fontset/default_fonts.h"
 #include <random>
 
-#include "../string/string.h"
+#include "../tools/string/string.h"
 
 enum UI_Position {
 	CONSTANT,

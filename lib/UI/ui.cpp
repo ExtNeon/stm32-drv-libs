@@ -674,11 +674,11 @@ void MenuView::draw_custom() {
 					menu_screen->get_sub_elements()[menu_screen->get_selected_index()];
 		}
 	} while (menu_screen != nullptr && menu_screen->is_visible()
-			&& menu_screen->get_mode() == CONTEXT_PASSED_TO_CHILD);
-	if (menu_screen != nullptr && menu_screen->is_visible()) {
+			&& menu_screen->get_mode() == CONTEXT_PASSED_TO_CHILD); //Находим целевой экран меню.
+	if (menu_screen != nullptr && menu_screen->is_visible()) { //И, если он видимый...
 		uint16_t line_pos_y = get_string_dimension(menu_screen->get_font(),
 				menu_screen->get_name()).height + 1;
-		for (uint16_t xx = 0; xx < ScreenView_get_width(); xx++) {
+		for (uint16_t xx = 0; xx < ScreenView_get_width(); xx++) {//Рисуем линию
 			for (uint16_t yy = 0; yy < ScreenView_get_height(); yy++) {
 				ScreenView_set_pixel(xx, yy,
 						yy == line_pos_y ?
@@ -688,7 +688,7 @@ void MenuView::draw_custom() {
 		}
 		draw_string(this, 0, 0, this->ScreenView_get_width(),
 				this->ScreenView_get_height(), menu_screen->get_font(),
-				menu_screen->get_name());
+				menu_screen->get_name()); //Рисуем имя экрана меню
 		menu_screen->compose(line_pos_y + 2, this);
 		//Веселье с отрисовкой. Да. Жопа короче.
 		/*
